@@ -1,0 +1,43 @@
+
+✅ 1. Folder Responsibilities
+📁 controllers/
+Purpose: Handle request logic and business rules.
+
+Files:
+
+authController.js: Contains register, login, and logout functions.
+
+updateUser.js: Handles updating user profile information.
+
+✅ Suggestion: You can move updateUser.js inside a subfolder like controllers/userController.js OR just merge it into a single userController.js.
+
+📁 models/
+Purpose: Defines MongoDB schemas and data models.
+
+Files:
+
+User.js: Defines the user schema, password hashing, and password comparison.
+
+✅ Looks good! Nothing to remove here.
+
+📁 middlewares/
+Purpose: Reusable middleware functions for route protection.
+
+Files:
+
+authenticateUser.js: Verifies JWT and attaches user to request.
+
+isAdmin.js: Restricts access to admin users only.
+
+✅ Suggestion:
+
+isAdmin.js is not used yet in your routes. If you're not using admin roles right now, you can remove or comment this file temporarily.
+
+📁 routes/
+Purpose: Defines API endpoints and maps them to controller functions.
+
+Files:
+
+authRoutes.js: Routes for signup (/signup) and login (/login).
+
+userRoutes.js: Route to update user (PATCH /) — currently very minimal.
